@@ -9,17 +9,17 @@ import java.sql.SQLException;
  * @version 1.0
  * @since 1.3.18
  */
-public class dbconnection {
+public class DbConnection {
     public static Connection getConnection () {
 
         //Database url
         String url = "jdbc:mysql://localhost/LFA_Lernende";
 
-        //Database lernende name for Login
-        String user = "root";
+        //Database Lernender name for Login
+        String user = "noel.oliveira";
 
         //Database password for Login
-        String password = "";
+        String password = "noelo";
 
         Connection connection = null;
 

@@ -2,20 +2,22 @@ package lfa.backend;
 
 import java.sql.*;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author noel.oliveira
  * @version 1.0
  * @since 1.3.18
  */
-public class dataEvaluation {
+public class DataEvaluation {
+
+    private static final Logger logger = LoggerFactory.getLogger(DataEvaluation.class);
 
     public static void printLernende() {
-        Connection con = dbconnection.getConnection();
+        Connection con = DbConnection.getConnection();
         try {
-            String query = "SELECT * FROM lernende;";
+            String query = "SELECT * FROM lernende LIMIT 50;";
 
             Statement statement = con.createStatement();
 
@@ -35,17 +37,15 @@ public class dataEvaluation {
             System.out.println("+-----+------------+------------+--------+------------------+------------------+------------+\n");
 
         } catch (SQLException ex) {
-            Logger.getLogger(dataEvaluation.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+            logger.debug("Exception: Programm konnte nicht korrekt ausgeführt werden\"");
+            System.out.println("Exception: Programm konnte nicht korrekt ausgeführt werden");
+        } finally {
+            try { con.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
     }
 
     public static void createLernende() {
-        Connection con = dbconnection.getConnection();
+        Connection con = DbConnection.getConnection();
         Scanner sc = new Scanner(System.in);
         Integer alter;
         String nachname, vorname, lernbegleiter, qpa, projekt;
@@ -80,17 +80,15 @@ public class dataEvaluation {
 
             System.out.println("Lernende/r wurde hinzugefügt!\n");
         } catch (SQLException ex) {
-            Logger.getLogger(dataEvaluation.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+            logger.debug("Exception: Programm konnte nicht korrekt ausgeführt werden\"");
+            System.out.println("Exception: Programm konnte nicht korrekt ausgeführt werden");
+        } finally {
+            try { con.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
     }
 
     public static void deleteLernende() {
-        Connection con = dbconnection.getConnection();
+        Connection con = DbConnection.getConnection();
         Scanner sc = new Scanner(System.in);
         int id;
         System.out.println("Geben Sie die ID des zu löschenden Lernenden ein: ");
@@ -103,12 +101,10 @@ public class dataEvaluation {
             preparedStmt.executeUpdate();
             System.out.println("Lernende/r wurde gelöscht!\n");
         } catch (SQLException ex) {
-            Logger.getLogger(dataEvaluation.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+            logger.debug("Exception: Programm konnte nicht korrekt ausgeführt werden\"");
+            System.out.println("Exception: Programm konnte nicht korrekt ausgeführt werden");
+        } finally {
+            try { con.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
     }
 }

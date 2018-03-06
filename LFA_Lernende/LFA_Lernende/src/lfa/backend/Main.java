@@ -22,15 +22,15 @@ public class Main {
             switch (eingabe) {
                 case "1":
                     System.out.println("Neuen Lernende erfassen\n");
-                    dataEvaluation.createLernende();
+                    DataEvaluation.createLernende();
                     break;
                 case "2":
                     System.out.println("Lernenden löschen\n");
-                    dataEvaluation.deleteLernende();
+                    DataEvaluation.deleteLernende();
                     break;
                 case "3":
                     System.out.println("Alle Lernende auflisten\n");
-                    dataEvaluation.printLernende();
+                    DataEvaluation.printLernende();
                     break;
                 case "q":
                     System.out.println("Beenden");
