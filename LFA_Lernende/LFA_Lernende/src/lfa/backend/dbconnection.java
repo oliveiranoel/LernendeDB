@@ -7,9 +7,14 @@ import java.sql.SQLException;
 /**
  * @author noel.oliveira
  * @version 1.0
- * @since 1.3.18
+ * @since 5.3.18
  */
 public class DbConnection {
+    /**
+     * Diese Methode stellt eine Verbindung zu einer MySQL Datenbank auf.
+     * Datenbankpfad, User und Passwort muss mitgegeben werden.
+     * @return - Gibt die Connection zur DB zurück
+     */
     public static Connection getConnection () {
 
         //Database url

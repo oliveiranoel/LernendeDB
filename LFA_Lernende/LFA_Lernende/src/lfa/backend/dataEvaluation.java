@@ -8,12 +8,15 @@ import org.slf4j.LoggerFactory;
 /**
  * @author noel.oliveira
  * @version 1.0
- * @since 1.3.18
+ * @since 5.3.18
  */
 public class DataEvaluation {
 
     private static final Logger logger = LoggerFactory.getLogger(DataEvaluation.class);
 
+    /**
+     * Diese Methode gibt alle Lernende in der Datenbank sauber aus.
+     */
     public static void printLernende() {
         Connection con = DbConnection.getConnection();
         try {
@@ -44,6 +47,9 @@ public class DataEvaluation {
         }
     }
 
+    /**
+     * Diese Methode fügt eine/n Lernende/n in der Datenbank mit den Angaben des Users hinzu.
+     */
     public static void createLernende() {
         Connection con = DbConnection.getConnection();
         Scanner sc = new Scanner(System.in);
@@ -87,6 +93,9 @@ public class DataEvaluation {
         }
     }
 
+    /**
+     * Löscht eine/n Lernende/n in der Datenbank mittels ID, welcher vom Benutzer eingegebn wird.
+     */
     public static void deleteLernende() {
         Connection con = DbConnection.getConnection();
         Scanner sc = new Scanner(System.in);

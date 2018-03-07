@@ -3,7 +3,7 @@ package lfa.backend;
 /**
  * @author noel.oliveira
  * @version 1.0
- * @since 1.3.18
+ * @since 5.3.18
  */
 
 public class Lernender {
@@ -14,7 +14,7 @@ public class Lernender {
     private String qpa;
     private String projekt;
 
-    //Constructor
+    // --------------- Constructor ---------------------------
     public Lernender(String nachname, String vorname, int alter, String lernbegleiter, String qpa, String projekt) {
         this.nachname = nachname;
         this.vorname = vorname;
@@ -24,6 +24,7 @@ public class Lernender {
         this.projekt = projekt;
     }
 
+    // -------------------- GETTER & SETTER ---------------------------
     public String getnachname() {
         return nachname;
     }

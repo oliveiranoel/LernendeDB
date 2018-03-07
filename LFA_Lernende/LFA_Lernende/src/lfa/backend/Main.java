@@ -2,8 +2,17 @@ package lfa.backend;
 
 import java.util.Scanner;
 
+/**
+ * @author noel.oliveira
+ * @version 1.0
+ * @since 5.3.18
+ */
 public class Main {
 
+    /**
+     * Gibt das Menü aus, welches den Benutzer erlaubt, einen Menüpunkt auszuwählen.
+     * @param args
+     */
     public static void main(String[] args) {
 	    Scanner sc = new Scanner(System.in);
 	    String eingabe;
